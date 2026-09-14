@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function Navbar({ onOpenWizard, currentPage = 'home', onNavigate, darkMode, onToggleDarkMode }) {
@@ -17,6 +17,12 @@ export default function Navbar({ onOpenWizard, currentPage = 'home', onNavigate,
 
     if (target === 'services') {
       if (onNavigate) onNavigate('services');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (target === 'admin' || target === '#/admin') {
+      if (onNavigate) onNavigate('admin');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -44,6 +50,7 @@ export default function Navbar({ onOpenWizard, currentPage = 'home', onNavigate,
     { name: 'Comfort & Tech', target: '#amenities' },
     { name: 'Hours & Location', target: '#location' },
     { name: 'Reviews', target: '#reviews' },
+    { name: 'Staff Portal', target: 'admin' },
   ];
 
   return (

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function Footer({ onOpenWizard, onNavigate }) {
@@ -6,6 +6,12 @@ export default function Footer({ onOpenWizard, onNavigate }) {
     e.preventDefault();
     if (target === 'services') {
       if (onNavigate) onNavigate('services');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (target === 'admin' || target === '#/admin') {
+      if (onNavigate) onNavigate('admin');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -88,6 +94,7 @@ export default function Footer({ onOpenWizard, onNavigate }) {
               { label: 'Patient Comfort & Tech', target: '#amenities' },
               { label: 'Office Hours & Map', target: '#location' },
               { label: 'Patient Reviews', target: '#reviews' },
+              { label: 'Staff / Admin Portal', target: 'admin' },
             ].map(link => (
               <li key={link.label}>
                 <button 
