@@ -1,0 +1,25 @@
+﻿User-agent: *
+Allow: /
+
+# AI Crawlers Explicit Access
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemaps & Context
+Sitemap: https://sparkledentalpa.com/sitemap.xml
+LLMs-Txt: https://sparkledentalpa.com/llms.txt

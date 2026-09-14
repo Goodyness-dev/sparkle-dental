@@ -1,0 +1,65 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  html.dark {
+    color-scheme: dark;
+    background-color: #0a0a0a !important;
+  }
+
+  body {
+    @apply bg-[#fbfbfb] text-neutral-900 antialiased overflow-x-hidden transition-colors duration-200;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  html.dark body {
+    background-color: #0a0a0a !important;
+    color: #f4f4f5 !important;
+  }
+
+  /* Clean minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f4f4f5;
+  }
+  html.dark ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d4d4d8;
+    border-radius: 9999px;
+  }
+  html.dark ::-webkit-scrollbar-thumb {
+    background: #27272a;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a1a1aa;
+  }
+}
+
+@layer utilities {
+  .card-thick {
+    @apply bg-white dark:bg-[#121212] border-2 border-neutral-200/90 dark:border-neutral-800/90 shadow-thick dark:shadow-thick-dark transition-all duration-300;
+  }
+
+  .card-thick-hover {
+    @apply bg-white dark:bg-[#121212] border-2 border-neutral-200/90 dark:border-neutral-800/90 shadow-thick dark:shadow-thick-dark hover:shadow-thick-hover hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-300;
+  }
+
+  /* Subtle ObsidianUI Dotted Grid */
+  .bg-dotted-grid {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .dark .bg-dotted-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
