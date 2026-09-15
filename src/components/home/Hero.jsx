@@ -1,8 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BUSINESS_INFO, isOpenNow } from '../../data/businessData';
 
 export default function Hero({ onOpenWizard }) {
   const openStatus = isOpenNow();
+  const videoRef = useRef(null);
+  const stageVideoRef = useRef(null);
+
+  useEffect(() => {
+    // Ensure muted autoplay succeeds across all browser security policies
+    [videoRef, stageVideoRef].forEach((ref) => {
+      if (ref.current) {
+        ref.current.defaultMuted = true;
+        ref.current.muted = true;
+        const playPromise = ref.current.play();
+        if (playPromise !== undefined) {
+          playPromise.catch((err) => {
+            console.log('Video autoplay prevented, waiting for user interaction:', err);
+          });
+        }
+      }
+    });
+  }, []);
 
   const tags = [
     { label: 'Zero-Anxiety Care', sub: 'Gentle local anesthesia', anim: 'animate-float-slow', glow: 'shadow-glow-lime' },
@@ -12,30 +30,31 @@ export default function Hero({ onOpenWizard }) {
   ];
 
   return (
-    <section className="relative pt-8 sm:pt-14 pb-16 sm:pb-24 overflow-hidden" aria-label="Sparkle Dental Hero">
-      {/* Background 3D Rendered Motion Video */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-20">
+    <section className="relative pt-8 sm:pt-14 pb-16 sm:pb-24 overflow-hidden isolate" aria-label="Sparkle Dental Hero">
+      {/* Background 3D Rendered Motion Video - Front and Center */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-cover opacity-60 dark:opacity-35 scale-105"
+          className="w-full h-full object-cover opacity-85 dark:opacity-75 scale-105 transition-opacity duration-1000"
           poster="/images/diegotoralabad-dentist-7397734_1920.jpg"
           aria-hidden="true"
         >
           <source src="/A_photorealistic_D_rendered_m.mp4" type="video/mp4" />
         </video>
-        {/* Crisp Gradient Overlay for high-contrast typography in light & dark modes */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#fbfbfb]/85 via-[#fbfbfb]/60 to-[#fbfbfb] dark:from-[#0a0a0a]/90 dark:via-[#0a0a0a]/75 dark:to-[#0a0a0a]" />
+        {/* Subtle Gradient Overlay for crisp typography while keeping 3D video unmistakably visible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#fbfbfb]/70 via-[#fbfbfb]/40 to-[#fbfbfb] dark:from-[#0a0a0a]/80 dark:via-[#0a0a0a]/50 dark:to-[#0a0a0a]" />
       </div>
 
       {/* Dotted Grid & Atmospheric Glows */}
-      <div className="absolute inset-0 bg-dotted-grid pointer-events-none -z-10 opacity-40" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] bg-gradient-to-b from-lime/20 via-emerald-100/20 to-transparent dark:from-lime/10 dark:via-emerald-950/10 blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
+      <div className="absolute inset-0 bg-dotted-grid pointer-events-none z-0 opacity-30" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] bg-gradient-to-b from-lime/25 via-emerald-100/20 to-transparent dark:from-lime/15 dark:via-emerald-950/15 blur-3xl pointer-events-none z-0 animate-pulse-glow" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Editorial Top Headline */}
         <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm font-semibold text-neutral-700 dark:text-neutral-300 shadow-sm transition-all hover:border-lime">
@@ -85,15 +104,23 @@ export default function Hero({ onOpenWizard }) {
         {/* 3D Tactile Interactive Showcase Stage */}
         <div className="relative mt-12 sm:mt-16 max-w-5xl mx-auto">
           {/* Subtle Ambient Curved Platform */}
-          <div className="relative rounded-3xl bg-gradient-to-b from-neutral-100 to-white dark:from-neutral-900 dark:to-neutral-950 border-2 border-neutral-200/90 dark:border-neutral-800 p-6 sm:p-12 shadow-thick overflow-hidden">
+          <div className="relative rounded-3xl backdrop-blur-md bg-white/80 dark:bg-neutral-900/80 border-2 border-neutral-200/90 dark:border-neutral-800 p-6 sm:p-12 shadow-thick overflow-hidden">
             
-            {/* Ambient Background Architectural Backdrop */}
-            <div className="absolute inset-0 opacity-15 dark:opacity-10 pointer-events-none mix-blend-overlay">
-              <img 
-                src="/images/diegotoralabad-dentist-7397734_1920.jpg" 
-                alt="Sparkle Dental Clinic Operatory" 
-                className="w-full h-full object-cover" 
-              />
+            {/* Ambient Background 3D Motion Video Backdrop */}
+            <div className="absolute inset-0 opacity-40 dark:opacity-30 pointer-events-none overflow-hidden">
+              <video
+                ref={stageVideoRef}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover scale-105"
+                aria-hidden="true"
+              >
+                <source src="/A_photorealistic_D_rendered_m.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-white/60 dark:from-neutral-950/80 dark:via-neutral-950/20 dark:to-neutral-950/60" />
             </div>
 
             {/* Glowing Orbs */}
