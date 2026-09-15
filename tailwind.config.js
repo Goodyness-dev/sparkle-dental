@@ -1,4 +1,4 @@
-﻿/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
   content: [
@@ -9,8 +9,29 @@ export default {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: '#fbfbfb',
-          muted: '#f4f4f5',
+          DEFAULT: '#eef5fb',
+          muted: '#e2edf7',
+          dark: '#071322',
+        },
+        navy: {
+          DEFAULT: '#0c1e33',
+          dark: '#071322',
+          card: '#0e233c',
+          border: '#17365d',
+          deep: '#060f1b',
+        },
+        ice: {
+          50: '#f8fafc',
+          100: '#f0f6fc',
+          200: '#e1edf8',
+          300: '#cfe2f4',
+          400: '#a7caf0',
+        },
+        azure: {
+          DEFAULT: '#1d77ff',
+          hover: '#1565e6',
+          light: '#e0edff',
+          dark: '#0e52b5',
         },
         lime: {
           DEFAULT: '#d4ff3f',
@@ -27,8 +48,8 @@ export default {
           subtle: '#3f3f46',
         },
         brand: {
-          primary: '#0f172a',
-          accent: '#d4ff3f',
+          primary: '#0c1e33',
+          accent: '#1d77ff',
           teal: '#0d9488',
           sky: '#0284c7',
         }
@@ -38,9 +59,10 @@ export default {
         sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
-        'thick': '0 12px 32px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04)',
-        'thick-hover': '0 20px 48px -6px rgba(0, 0, 0, 0.12), 0 8px 24px -4px rgba(0, 0, 0, 0.06)',
+        'thick': '0 12px 32px -4px rgba(12, 30, 51, 0.08), 0 4px 12px -2px rgba(12, 30, 51, 0.04)',
+        'thick-hover': '0 20px 48px -6px rgba(29, 119, 255, 0.16), 0 8px 24px -4px rgba(12, 30, 51, 0.08)',
         'thick-dark': '0 14px 36px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08)',
+        'glow-blue': '0 0 32px -4px rgba(29, 119, 255, 0.45)',
         'glow-lime': '0 0 24px -4px rgba(212, 255, 63, 0.45)',
       },
       keyframes: {

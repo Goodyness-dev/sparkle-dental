@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { BUSINESS_INFO, isOpenNow } from '../../data/businessData';
 
 export default function LocationHoursSection({ onOpenWizard }) {
@@ -8,18 +8,18 @@ export default function LocationHoursSection({ onOpenWizard }) {
   const currentDayName = dayNames[currentDayIndex];
 
   return (
-    <section id="location" className="py-20 sm:py-28 bg-white dark:bg-[#0e0e0e] transition-colors" aria-labelledby="location-heading">
+    <section id="location" className="py-20 sm:py-28 bg-[#eef5fb] dark:bg-[#071322] transition-colors" aria-labelledby="location-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs font-bold text-neutral-600 dark:text-neutral-400 uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0e233c] border border-[#d2e3f3] dark:border-[#17365d] text-xs font-bold text-[#1d77ff] uppercase tracking-widest mb-3 shadow-xs">
             <span>Kutztown Clinic Location & Hours</span>
           </div>
-          <h2 id="location-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-neutral-950 dark:text-white uppercase leading-tight">
-            Convenient Berks County Access.
+          <h2 id="location-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-[#0c1e33] dark:text-white uppercase leading-tight">
+            CONVENIENT BERKS COUNTY ACCESS
           </h2>
-          <p className="text-neutral-600 dark:text-neutral-300 mt-4 text-base sm:text-lg leading-relaxed font-medium">
+          <p className="text-slate-600 dark:text-slate-300 mt-4 text-base sm:text-lg leading-relaxed font-medium">
             Located on Kutztown Rd with easy front-door parking. Serving Kutztown, Fleetwood, Topton, Lyons, and surrounding communities.
           </p>
         </div>

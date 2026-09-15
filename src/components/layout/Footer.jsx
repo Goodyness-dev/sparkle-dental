@@ -24,19 +24,19 @@ export default function Footer({ onOpenWizard, onNavigate }) {
   };
 
   return (
-    <footer className="bg-neutral-950 text-neutral-400 text-sm pb-16 sm:pb-0 border-t border-neutral-900" role="contentinfo">
+    <footer className="bg-[#0c1e33] text-slate-400 text-sm pb-16 sm:pb-0 border-t border-[#17365d]" role="contentinfo">
       
       {/* High-Impact Pre-Footer Callout */}
-      <div className="bg-neutral-900 border-b border-neutral-800 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#071322] border-b border-[#17365d] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left space-y-2">
-            <span className="text-xs font-black uppercase tracking-wider text-lime">
+            <span className="text-xs font-black uppercase tracking-wider text-[#1d77ff]">
               Anxiety-Free Family Dentistry
             </span>
             <h3 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
               Ready to restore your healthiest, brightest smile?
             </h3>
-            <p className="text-neutral-400 text-sm sm:text-base">
+            <p className="text-slate-300 text-sm sm:text-base">
               Accepting new patients and emergencies in Kutztown, PA. Flexible financing & insurance welcome.
             </p>
           </div>
@@ -44,15 +44,15 @@ export default function Footer({ onOpenWizard, onNavigate }) {
           <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full md:w-auto shrink-0">
             <button
               onClick={() => onOpenWizard()}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-lime hover:bg-lime-hover text-neutral-950 font-black text-base transition-all shadow-glow-lime active:scale-95 text-center"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#1d77ff] hover:bg-[#1565e6] text-white font-black text-base transition-all shadow-xl shadow-blue-500/25 active:scale-95 text-center"
             >
               Request Appointment Online
             </button>
             <a
               href={`tel:${BUSINESS_INFO.phone.replace(/[^0-9]/g, '')}`}
-              className="w-full sm:w-auto px-7 py-4 rounded-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-base transition border border-neutral-700 flex items-center justify-center space-x-2.5 active:scale-95 text-center"
+              className="w-full sm:w-auto px-7 py-4 rounded-full bg-[#0c1e33] hover:bg-[#17365d] text-white font-bold text-base transition border border-[#17365d] flex items-center justify-center space-x-2.5 active:scale-95 text-center"
             >
-              <svg className="w-5 h-5 text-neutral-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg className="w-5 h-5 text-[#1d77ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <span>{BUSINESS_INFO.phone}</span>

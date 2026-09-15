@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function ReviewsSection({ onOpenWizard }) {
@@ -10,16 +10,16 @@ export default function ReviewsSection({ onOpenWizard }) {
   ];
 
   return (
-    <section id="reviews" className="py-20 sm:py-28 bg-[#fbfbfb] dark:bg-[#0a0a0a] transition-colors" aria-labelledby="reviews-heading">
+    <section id="reviews" className="py-20 sm:py-28 bg-[#eef5fb] dark:bg-[#071322] transition-colors" aria-labelledby="reviews-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs font-bold text-neutral-600 dark:text-neutral-400 uppercase tracking-widest mb-3">
-            <span>Patient Experiences</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0e233c] border border-[#d2e3f3] dark:border-[#17365d] text-xs font-bold text-[#1d77ff] uppercase tracking-widest mb-3 shadow-xs">
+            <span>Verified Patient Experiences</span>
           </div>
-          <h2 id="reviews-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-neutral-950 dark:text-white uppercase leading-tight">
-            Trusted by Kutztown Families.
+          <h2 id="reviews-heading" className="text-3xl sm:text-5xl font-black tracking-tight text-[#0c1e33] dark:text-white uppercase leading-tight">
+            TRUSTED BY KUTZTOWN FAMILIES
           </h2>
           <div className="flex items-center justify-center space-x-3 mt-4">
             <div className="flex text-amber-400 space-x-1" aria-label="5 out of 5 stars">
@@ -29,7 +29,7 @@ export default function ReviewsSection({ onOpenWizard }) {
                 </svg>
               ))}
             </div>
-            <span className="text-neutral-700 dark:text-neutral-300 text-base font-bold">
+            <span className="text-slate-700 dark:text-slate-300 text-base font-bold">
               5.0 Star Local Patient Reputation
             </span>
           </div>
@@ -40,9 +40,9 @@ export default function ReviewsSection({ onOpenWizard }) {
           {smileGallery.map((item, idx) => (
             <div 
               key={idx} 
-              className="card-thick-hover rounded-2xl overflow-hidden group relative"
+              className="card-thick-hover rounded-2xl overflow-hidden group relative border border-[#d2e3f3] dark:border-[#17365d]"
             >
-              <div className="h-44 sm:h-52 w-full overflow-hidden bg-neutral-200 dark:bg-neutral-800">
+              <div className="h-44 sm:h-52 w-full overflow-hidden bg-slate-200 dark:bg-[#0c1e33]">
                 <img
                   src={item.img}
                   alt={item.caption}
@@ -50,9 +50,9 @@ export default function ReviewsSection({ onOpenWizard }) {
                   className="w-full h-full object-cover img-zoom"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-3.5 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1e33]/90 via-[#0c1e33]/30 to-transparent flex flex-col justify-end p-3.5 text-white">
                 <p className="text-xs font-black drop-shadow-sm">{item.caption}</p>
-                <p className="text-[10px] text-lime font-semibold drop-shadow-sm">{item.sub}</p>
+                <p className="text-[10px] text-cyan-300 font-semibold drop-shadow-sm">{item.sub}</p>
               </div>
             </div>
           ))}
@@ -63,7 +63,7 @@ export default function ReviewsSection({ onOpenWizard }) {
           {BUSINESS_INFO.reviews.map((rev, idx) => (
             <article
               key={idx}
-              className="card-thick-hover p-8 sm:p-10 rounded-3xl flex flex-col justify-between"
+              className="card-thick-hover p-8 sm:p-10 rounded-3xl flex flex-col justify-between bg-white dark:bg-[#0e233c] border-2 border-[#d2e3f3] dark:border-[#17365d]"
             >
               <div>
                 {/* Stars + Badge */}
@@ -75,24 +75,24 @@ export default function ReviewsSection({ onOpenWizard }) {
                       </svg>
                     ))}
                   </div>
-                  <span className="text-xs font-bold text-neutral-600 dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold text-[#1d77ff] bg-[#eef5fb] dark:bg-[#17365d] border border-[#d2e3f3] dark:border-[#17365d] px-3 py-1 rounded-full">
                     {rev.source}
                   </span>
                 </div>
 
                 {/* Review Text */}
-                <p className="text-neutral-700 dark:text-neutral-200 text-base sm:text-lg leading-relaxed mb-6 font-medium italic">
+                <p className="text-slate-700 dark:text-slate-200 text-base sm:text-lg leading-relaxed mb-6 font-medium italic">
                   "{rev.comment}"
                 </p>
               </div>
 
               {/* Author Footer */}
-              <div className="pt-6 border-t border-neutral-100 dark:border-neutral-800/80 flex justify-between items-center">
+              <div className="pt-6 border-t border-[#e2edf7] dark:border-[#17365d] flex justify-between items-center">
                 <div>
-                  <h4 className="font-black text-neutral-950 dark:text-white text-base">{rev.author}</h4>
-                  <span className="text-neutral-500 dark:text-neutral-400 text-xs font-semibold">{rev.location}</span>
+                  <h4 className="font-black text-[#0c1e33] dark:text-white text-base">{rev.author}</h4>
+                  <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold">{rev.location}</span>
                 </div>
-                <span className="text-xs font-bold text-lime-dark dark:text-lime">{rev.date}</span>
+                <span className="text-xs font-bold text-[#1d77ff]">{rev.date}</span>
               </div>
             </article>
           ))}
@@ -102,7 +102,7 @@ export default function ReviewsSection({ onOpenWizard }) {
         <div className="mt-14 sm:mt-16 text-center">
           <button
             onClick={() => onOpenWizard()}
-            className="inline-flex items-center space-x-3 px-9 py-4 rounded-full bg-neutral-950 hover:bg-black dark:bg-lime dark:hover:bg-lime-hover text-white dark:text-neutral-950 font-black text-base transition-all shadow-thick active:scale-95 hover:shadow-glow-lime"
+            className="inline-flex items-center space-x-3 px-9 py-4 rounded-full bg-[#1d77ff] hover:bg-[#1565e6] text-white font-black text-base transition-all shadow-xl shadow-blue-500/25 active:scale-95"
           >
             <span>Experience Gentle Dentistry — Book Today</span>
             <svg className="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2.5">

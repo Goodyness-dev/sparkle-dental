@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -13,13 +13,13 @@
   }
 
   body {
-    @apply bg-[#fbfbfb] text-neutral-900 antialiased overflow-x-hidden transition-colors duration-200;
+    @apply bg-[#eef5fb] text-neutral-900 antialiased overflow-x-hidden transition-colors duration-200;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   html.dark body {
-    background-color: #0a0a0a !important;
-    color: #f4f4f5 !important;
+    background-color: #071322 !important;
+    color: #f0f6fc !important;
   }
 
   /* Clean minimal scrollbar */
@@ -27,35 +27,45 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #f4f4f5;
+    background: #eef5fb;
   }
   html.dark ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: #071322;
   }
   ::-webkit-scrollbar-thumb {
-    background: #d4d4d8;
+    background: #b9d5ee;
     border-radius: 9999px;
   }
   html.dark ::-webkit-scrollbar-thumb {
-    background: #27272a;
+    background: #17365d;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #a1a1aa;
+    background: #1d77ff;
   }
 }
 
 @layer utilities {
   .card-thick {
-    @apply bg-white dark:bg-[#121212] border-2 border-neutral-200/90 dark:border-neutral-800/90 shadow-thick dark:shadow-thick-dark transition-all duration-300;
+    @apply bg-white dark:bg-[#0e233c] border-2 border-[#d6e6f5] dark:border-[#17365d] shadow-thick dark:shadow-thick-dark transition-all duration-300;
   }
 
   .card-thick-hover {
-    @apply bg-white dark:bg-[#121212] border-2 border-neutral-200/90 dark:border-neutral-800/90 shadow-thick dark:shadow-thick-dark hover:shadow-thick-hover hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-300;
+    @apply bg-white dark:bg-[#0e233c] border-2 border-[#d6e6f5] dark:border-[#17365d] shadow-thick dark:shadow-thick-dark hover:shadow-thick-hover hover:border-[#1d77ff]/60 dark:hover:border-[#1d77ff]/60 transition-all duration-300;
   }
 
-  /* Subtle ObsidianUI Dotted Grid */
+  /* Payrot Iconic Deep Navy Card */
+  .card-navy {
+    @apply bg-[#0c1e33] text-white border-2 border-[#17365d] shadow-2xl;
+  }
+
+  /* Radiant Azure Atmospheric Glow */
+  .bg-radial-azure {
+    background: radial-gradient(circle, rgba(29, 119, 255, 0.22) 0%, rgba(29, 119, 255, 0.05) 50%, transparent 70%);
+  }
+
+  /* Subtle ObsidianUI Dotted Grid with Ice Blue Accent */
   .bg-dotted-grid {
-    background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(29, 119, 255, 0.12) 1px, transparent 1px);
     background-size: 24px 24px;
   }
   .dark .bg-dotted-grid {

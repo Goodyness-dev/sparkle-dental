@@ -57,29 +57,29 @@ export default function Navbar({ onOpenWizard, currentPage = 'home', onNavigate,
     <header 
       className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#fbfbfb]/90 dark:bg-[#0a0a0a]/90 backdrop-blur-md shadow-sm border-b border-neutral-200/80 dark:border-neutral-800' 
-          : 'bg-[#fbfbfb] dark:bg-[#0a0a0a] border-b border-neutral-200/50 dark:border-neutral-800/60'
+          ? 'bg-[#eef5fb]/90 dark:bg-[#071322]/90 backdrop-blur-md shadow-sm border-b border-[#d2e3f3] dark:border-[#17365d]' 
+          : 'bg-[#eef5fb]/60 dark:bg-[#071322]/60 backdrop-blur-sm border-b border-[#d2e3f3]/50 dark:border-[#17365d]/50'
       }`}
       role="banner"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand Logo (Tactile Minimalist) */}
+        {/* Brand Logo (Payrot Minimalist Clean) */}
         <button 
           onClick={(e) => handleNavClick(e, '#')} 
           className="flex items-center space-x-3 group text-left"
           aria-label="Sparkle Dental Home"
         >
-          <div className="w-10 h-10 rounded-2xl bg-neutral-900 dark:bg-white flex items-center justify-center text-white dark:text-neutral-950 shadow-md group-hover:scale-105 transition-transform">
-            {/* Semantic Sparkle Tooth SVG */}
-            <svg className="w-6 h-6 fill-current text-lime dark:text-neutral-950" viewBox="0 0 24 24">
+          <div className="w-10 h-10 rounded-2xl bg-[#0c1e33] dark:bg-white flex items-center justify-center text-white dark:text-[#0c1e33] shadow-md group-hover:scale-105 transition-transform">
+            {/* Semantic Sparkle Tooth SVG in Azure */}
+            <svg className="w-6 h-6 fill-current text-[#1d77ff] dark:text-[#1d77ff]" viewBox="0 0 24 24">
               <path d="M12 2C7.5 2 4 5 4 9c0 3.2 1.6 5.8 3 8.5C8.2 20 9.1 22 10.5 22c1.2 0 1.5-1.5 1.5-3 0-1.5.5-2 1.5-2s1.5.5 1.5 2c0 1.5.3 3 1.5 3 1.4 0 2.3-2 3.5-4.5 1.4-2.7 3-5.3 3-8.5 0-4-3.5-7-8-7zm0 3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm-4 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-neutral-900 dark:text-white leading-tight">
-              Sparkle<span className="text-lime-dark dark:text-lime font-black">Dental</span>
+            <span className="font-heading text-xl sm:text-2xl font-black tracking-tight text-[#0c1e33] dark:text-white leading-tight">
+              Sparkle<span className="text-[#1d77ff] font-black">Dental</span>
             </span>
-            <span className="text-[11px] tracking-wider uppercase text-neutral-500 dark:text-neutral-400 font-semibold">
+            <span className="text-[10px] tracking-widest uppercase text-slate-500 dark:text-slate-400 font-bold">
               Kutztown, PA
             </span>
           </div>
@@ -95,8 +95,8 @@ export default function Navbar({ onOpenWizard, currentPage = 'home', onNavigate,
                 onClick={(e) => handleNavClick(e, link.target)}
                 className={`text-sm font-semibold tracking-tight transition-colors ${
                   isActive 
-                    ? 'text-neutral-950 dark:text-lime font-bold border-b-2 border-neutral-950 dark:border-lime pb-1' 
-                    : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white'
+                    ? 'text-[#1d77ff] font-bold border-b-2 border-[#1d77ff] pb-1' 
+                    : 'text-slate-600 dark:text-slate-300 hover:text-[#0c1e33] dark:hover:text-white'
                 }`}
               >
                 {link.name}
@@ -107,22 +107,22 @@ export default function Navbar({ onOpenWizard, currentPage = 'home', onNavigate,
 
         {/* Action Pills & Theme Toggle */}
         <div className="flex items-center space-x-3">
-          {/* Phone Link (Minimalist Outline Pill) */}
+          {/* Phone Link (Minimalist Ice Outline Pill) */}
           <a
             href={`tel:${BUSINESS_INFO.phone.replace(/[^0-9]/g, '')}`}
-            className="hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/70 dark:bg-neutral-900/80 text-neutral-900 dark:text-neutral-100 text-sm font-medium hover:border-neutral-500 transition-all"
+            className="hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-[#cbdff2] dark:border-[#17365d] bg-white/80 dark:bg-[#0c1e33]/80 text-[#0c1e33] dark:text-white text-sm font-semibold hover:border-[#1d77ff] transition-all shadow-xs"
             aria-label={`Call Sparkle Dental at ${BUSINESS_INFO.phone}`}
           >
-            <svg className="w-4 h-4 text-neutral-700 dark:text-neutral-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg className="w-4 h-4 text-[#1d77ff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <span className="font-semibold">{BUSINESS_INFO.phone}</span>
+            <span>{BUSINESS_INFO.phone}</span>
           </a>
 
-          {/* Primary CTA (Bold Tactile Pill matching 'Get help' in reference image) */}
+          {/* Primary CTA (Electric Azure Pill matching template 'Connect →') */}
           <button
             onClick={() => onOpenWizard()}
-            className="px-5 py-2.5 rounded-full bg-neutral-900 hover:bg-black dark:bg-lime dark:hover:bg-lime-hover text-white dark:text-neutral-950 font-bold text-sm tracking-tight transition-all duration-200 shadow-sm active:scale-95 flex items-center space-x-2"
+            className="px-5 py-2.5 rounded-full bg-[#1d77ff] hover:bg-[#1565e6] text-white font-bold text-sm tracking-tight transition-all duration-200 shadow-md shadow-blue-500/25 active:scale-95 flex items-center space-x-2"
           >
             <span>Book Visit</span>
             <svg className="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2.5">

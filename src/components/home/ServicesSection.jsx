@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { SERVICES, SERVICE_CATEGORIES } from '../../data/servicesData';
 
 export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
@@ -9,19 +9,19 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
     : SERVICES.filter(s => s.category === selectedCategory).slice(0, 6);
 
   return (
-    <section id="services" className="py-20 sm:py-28 bg-[#fbfbfb] dark:bg-[#0a0a0a] transition-colors" aria-labelledby="services-heading">
+    <section id="services" className="py-20 sm:py-28 bg-[#eef5fb] dark:bg-[#071322] transition-colors" aria-labelledby="services-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
+        {/* Section Header (Matches Payrot 'WHO WE SERVE' structure) */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs font-bold text-neutral-600 dark:text-neutral-400 uppercase tracking-widest mb-3">
-            <span>Comprehensive Dental Care</span>
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0e233c] border border-[#d2e3f3] dark:border-[#17365d] text-xs font-bold text-[#1d77ff] uppercase tracking-widest mb-3 shadow-xs">
+            <span>Who We Serve & Clinical Procedures</span>
           </div>
-          <h2 id="services-heading" className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-neutral-950 dark:text-white uppercase leading-[1.05]">
-            Exceptional Care for Every Tooth.
+          <h2 id="services-heading" className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0c1e33] dark:text-white uppercase leading-[1.05]">
+            EXCEPTIONAL CARE FOR EVERY SMILE
           </h2>
-          <p className="text-neutral-600 dark:text-neutral-300 mt-4 text-base sm:text-xl leading-relaxed font-medium">
-            From routine preventive checkups to complex restorations and anxiety-free emergency relief. Everything Kutztown families need under one roof.
+          <p className="text-slate-600 dark:text-slate-300 mt-4 text-base sm:text-xl leading-relaxed font-medium">
+            From routine gentle cleanings to same-day porcelain restorations and anxiety-free emergency relief. Everything Berks County families need under one roof.
           </p>
         </div>
 
@@ -33,8 +33,8 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-tight whitespace-nowrap transition-all duration-200 ${
                 selectedCategory === cat
-                  ? 'bg-neutral-950 text-white dark:bg-lime dark:text-neutral-950 shadow-sm'
-                  : 'bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400'
+                  ? 'bg-[#1d77ff] text-white shadow-md shadow-blue-500/25'
+                  : 'bg-white dark:bg-[#0e233c] text-slate-600 dark:text-slate-300 border border-[#d2e3f3] dark:border-[#17365d] hover:border-[#1d77ff]'
               }`}
             >
               {cat}
@@ -97,7 +97,7 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
                 <span className="text-neutral-400 dark:text-neutral-500">
                   Anxiety-Free Protocol
                 </span>
-                <div className="inline-flex items-center space-x-1.5 text-neutral-900 dark:text-lime font-black group-hover:translate-x-1 transition-transform">
+                <div className="inline-flex items-center space-x-1.5 text-[#1d77ff] font-black group-hover:translate-x-1 transition-transform">
                   <span>Schedule</span>
                   <svg className="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -112,7 +112,7 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
         <div className="text-center">
           <button
             onClick={onViewAllServices}
-            className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-neutral-950 hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-700 text-white font-bold text-base transition-all shadow-thick active:scale-95 border border-neutral-800 hover:shadow-glow-lime"
+            className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#1d77ff] hover:bg-[#1565e6] text-white font-bold text-base transition-all shadow-xl shadow-blue-500/25 active:scale-95"
           >
             <span>Explore Full Dental Catalog ({SERVICES.length} Procedures)</span>
             <svg className="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2.5">
