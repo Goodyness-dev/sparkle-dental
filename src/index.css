@@ -13,13 +13,13 @@
   }
 
   body {
-    @apply bg-[#eef5fb] text-neutral-900 antialiased overflow-x-hidden transition-colors duration-200;
+    @apply bg-[#faf8f5] text-stone-900 antialiased overflow-x-hidden transition-colors duration-200;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   html.dark body {
-    background-color: #071322 !important;
-    color: #f0f6fc !important;
+    background-color: #0c121c !important;
+    color: #f8fafc !important;
   }
 
   /* Clean minimal scrollbar */
@@ -27,33 +27,33 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #eef5fb;
+    background: #faf8f5;
   }
   html.dark ::-webkit-scrollbar-track {
-    background: #071322;
+    background: #0c121c;
   }
   ::-webkit-scrollbar-thumb {
-    background: #b9d5ee;
+    background: #dcd4c7;
     border-radius: 9999px;
   }
   html.dark ::-webkit-scrollbar-thumb {
-    background: #17365d;
+    background: #1e293b;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #1d77ff;
+    background: #0c1e33;
   }
 }
 
 @layer utilities {
   .card-thick {
-    @apply bg-white dark:bg-[#0e233c] border-2 border-[#d6e6f5] dark:border-[#17365d] shadow-thick dark:shadow-thick-dark transition-all duration-300;
+    @apply bg-white dark:bg-[#0e233c] border-2 border-[#e8dfd2] dark:border-[#17365d] shadow-thick dark:shadow-thick-dark transition-all duration-300;
   }
 
   .card-thick-hover {
-    @apply bg-white dark:bg-[#0e233c] border-2 border-[#d6e6f5] dark:border-[#17365d] shadow-thick dark:shadow-thick-dark hover:shadow-thick-hover hover:border-[#1d77ff]/60 dark:hover:border-[#1d77ff]/60 transition-all duration-300;
+    @apply bg-white dark:bg-[#0e233c] border-2 border-[#e8dfd2] dark:border-[#17365d] shadow-thick dark:shadow-thick-dark hover:shadow-thick-hover hover:border-[#0c1e33]/50 dark:hover:border-white/40 transition-all duration-300;
   }
 
-  /* Payrot Iconic Deep Navy Card */
+  /* Deep Navy Card */
   .card-navy {
     @apply bg-[#0c1e33] text-white border-2 border-[#17365d] shadow-2xl;
   }

@@ -9,9 +9,19 @@ export default {
     extend: {
       colors: {
         canvas: {
-          DEFAULT: '#eef5fb',
-          muted: '#e2edf7',
-          dark: '#071322',
+          DEFAULT: '#faf8f5',
+          cream: '#f7f4ee',
+          silk: '#fcfbf9',
+          muted: '#f2ede4',
+          dark: '#0c121c',
+        },
+        cream: {
+          50: '#fdfcf9',
+          100: '#faf8f5',
+          200: '#f5f0e8',
+          300: '#ede4d6',
+          400: '#e0d3c1',
+          border: '#e8dfd2',
         },
         navy: {
           DEFAULT: '#0c1e33',
@@ -19,13 +29,6 @@ export default {
           card: '#0e233c',
           border: '#17365d',
           deep: '#060f1b',
-        },
-        ice: {
-          50: '#f8fafc',
-          100: '#f0f6fc',
-          200: '#e1edf8',
-          300: '#cfe2f4',
-          400: '#a7caf0',
         },
         azure: {
           DEFAULT: '#1d77ff',

@@ -57,8 +57,8 @@ export default function Navbar({ onOpenWizard, currentPage = 'home', onNavigate,
     <header 
       className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#eef5fb]/90 dark:bg-[#071322]/90 backdrop-blur-md shadow-sm border-b border-[#d2e3f3] dark:border-[#17365d]' 
-          : 'bg-[#eef5fb]/60 dark:bg-[#071322]/60 backdrop-blur-sm border-b border-[#d2e3f3]/50 dark:border-[#17365d]/50'
+          ? 'bg-[#faf8f5]/90 dark:bg-[#0c121c]/90 backdrop-blur-md shadow-xs border-b border-[#e8dfd2] dark:border-[#17365d]' 
+          : 'bg-[#faf8f5]/70 dark:bg-[#0c121c]/70 backdrop-blur-sm border-b border-[#e8dfd2]/60 dark:border-[#17365d]/50'
       }`}
       role="banner"
     >

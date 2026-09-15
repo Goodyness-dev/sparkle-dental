@@ -9,18 +9,18 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
     : SERVICES.filter(s => s.category === selectedCategory).slice(0, 6);
 
   return (
-    <section id="services" className="py-20 sm:py-28 bg-[#eef5fb] dark:bg-[#071322] transition-colors" aria-labelledby="services-heading">
+    <section id="services" className="py-20 sm:py-28 bg-[#f4efe8] dark:bg-[#071322] transition-colors" aria-labelledby="services-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Matches Payrot 'WHO WE SERVE' structure) */}
+        {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0e233c] border border-[#d2e3f3] dark:border-[#17365d] text-xs font-bold text-[#1d77ff] uppercase tracking-widest mb-3 shadow-xs">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0e233c] border border-[#e8dfd2] dark:border-[#17365d] text-xs font-bold text-[#1d77ff] uppercase tracking-widest mb-3 shadow-xs">
             <span>Who We Serve & Clinical Procedures</span>
           </div>
           <h2 id="services-heading" className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#0c1e33] dark:text-white uppercase leading-[1.05]">
             EXCEPTIONAL CARE FOR EVERY SMILE
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 mt-4 text-base sm:text-xl leading-relaxed font-medium">
+          <p className="text-stone-600 dark:text-slate-300 mt-4 text-base sm:text-xl leading-relaxed font-medium">
             From routine gentle cleanings to same-day porcelain restorations and anxiety-free emergency relief. Everything Berks County families need under one roof.
           </p>
         </div>
@@ -33,8 +33,8 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-tight whitespace-nowrap transition-all duration-200 ${
                 selectedCategory === cat
-                  ? 'bg-[#1d77ff] text-white shadow-md shadow-blue-500/25'
-                  : 'bg-white dark:bg-[#0e233c] text-slate-600 dark:text-slate-300 border border-[#d2e3f3] dark:border-[#17365d] hover:border-[#1d77ff]'
+                  ? 'bg-[#0c1e33] text-white shadow-md shadow-stone-900/15'
+                  : 'bg-white dark:bg-[#0e233c] text-stone-700 dark:text-slate-300 border border-[#e8dfd2] dark:border-[#17365d] hover:border-[#0c1e33]'
               }`}
             >
               {cat}
