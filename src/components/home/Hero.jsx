@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { BUSINESS_INFO, isOpenNow } from '../../data/businessData';
 
 export default function Hero({ onOpenWizard }) {
@@ -12,8 +12,27 @@ export default function Hero({ onOpenWizard }) {
   ];
 
   return (
-    <section className="relative pt-8 sm:pt-14 pb-16 sm:pb-24 overflow-hidden bg-dotted-grid" aria-label="Sparkle Dental Hero">
-      {/* Background Soft Atmospheric Glows with subtle pulse animation */}
+    <section className="relative pt-8 sm:pt-14 pb-16 sm:pb-24 overflow-hidden" aria-label="Sparkle Dental Hero">
+      {/* Background 3D Rendered Motion Video */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-20">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-60 dark:opacity-35 scale-105"
+          poster="/images/diegotoralabad-dentist-7397734_1920.jpg"
+          aria-hidden="true"
+        >
+          <source src="/A_photorealistic_D_rendered_m.mp4" type="video/mp4" />
+        </video>
+        {/* Crisp Gradient Overlay for high-contrast typography in light & dark modes */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#fbfbfb]/85 via-[#fbfbfb]/60 to-[#fbfbfb] dark:from-[#0a0a0a]/90 dark:via-[#0a0a0a]/75 dark:to-[#0a0a0a]" />
+      </div>
+
+      {/* Dotted Grid & Atmospheric Glows */}
+      <div className="absolute inset-0 bg-dotted-grid pointer-events-none -z-10 opacity-40" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[350px] bg-gradient-to-b from-lime/20 via-emerald-100/20 to-transparent dark:from-lime/10 dark:via-emerald-950/10 blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
