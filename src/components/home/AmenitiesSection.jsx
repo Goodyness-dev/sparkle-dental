@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import { AMENITIES_AVAILABLE, PAYMENT_METHODS } from '../../data/amenitiesData';
+import { AMENITIES_AVAILABLE } from '../../data/amenitiesData';
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function AmenitiesSection({ onOpenWizard }) {
@@ -20,46 +20,98 @@ export default function AmenitiesSection({ onOpenWizard }) {
           </p>
         </div>
 
-        {/* Bento Grid: Amenities & Patient Perks */}
+        {/* Bento Showcase: Clinical Technology & Comfort Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
-          {AMENITIES_AVAILABLE.slice(0, 6).map((item, idx) => (
-            <div
-              key={item.name}
-              className="card-thick-hover p-8 rounded-3xl group flex flex-col justify-between"
-            >
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-950 dark:text-lime group-hover:scale-110 transition-transform mb-6">
-                  {/* Semantic Sparkle Star SVG */}
-                  <svg className="w-6 h-6 fill-current text-lime-dark dark:text-lime" viewBox="0 0 24 24">
-                    <path d="M12 2l2.4 7.2h7.6l-6.1 4.5 2.3 7.3-6.2-4.6-6.2 4.6 2.3-7.3-6.1-4.5h7.6z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-black text-neutral-950 dark:text-white tracking-tight mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed font-medium">
-                  {item.description}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs font-bold text-neutral-400">
-                <span>Feature #{idx + 1}</span>
-                <span className="text-lime-dark dark:text-lime font-black">Verified Comfort</span>
-              </div>
+          {/* Feature Card 1: With Image of Modern Operatory Suite */}
+          <div className="card-thick-hover rounded-3xl overflow-hidden group flex flex-col justify-between">
+            <div className="h-44 w-full overflow-hidden relative">
+              <img
+                src="/images/diegotoralabad-dentist-7397734_1920.jpg"
+                alt="Modern Sterilization and Operatory Suite"
+                className="w-full h-full object-cover img-zoom"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-3 text-xs font-black text-white bg-black/60 px-3 py-1 rounded-full backdrop-blur-xs">
+                CDC & ADA Sterilization
+              </span>
             </div>
-          ))}
+            <div className="p-6">
+              <h3 className="text-xl font-black text-neutral-950 dark:text-white mb-2">Hospital-Grade Sterilization</h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed font-medium">
+                Individual sterile cassette setups, autoclave monitoring, and spotless treatment suites.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature Card 2: Gentle Pediatric & Family Care */}
+          <div className="card-thick-hover rounded-3xl overflow-hidden group flex flex-col justify-between">
+            <div className="h-44 w-full overflow-hidden relative">
+              <img
+                src="/images/meistervideo-dentist-1933009_1920.jpg"
+                alt="Gentle Pediatric and Family Dentistry"
+                className="w-full h-full object-cover img-zoom"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-3 text-xs font-black text-white bg-black/60 px-3 py-1 rounded-full backdrop-blur-xs">
+                Zero-Anxiety First Visits
+              </span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-black text-neutral-950 dark:text-white mb-2">Kid-Friendly & Anxiety-Free</h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed font-medium">
+                Patience, gentle numbing, and positive encouragement to make dental checkups a breeze.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature Card 3: Digital Hygiene & Cleaning */}
+          <div className="card-thick-hover rounded-3xl overflow-hidden group flex flex-col justify-between">
+            <div className="h-44 w-full overflow-hidden relative">
+              <img
+                src="/images/rgerber-teeth-cleaning-1514692_1920.jpg"
+                alt="Ultrasonic Hygiene and Cleaning"
+                className="w-full h-full object-cover img-zoom"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <span className="absolute bottom-3 left-3 text-xs font-black text-white bg-black/60 px-3 py-1 rounded-full backdrop-blur-xs">
+                Ultrasonic Scaling
+              </span>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-black text-neutral-950 dark:text-white mb-2">Precision Hygiene Polish</h3>
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed font-medium">
+                Gentle ultrasonic plaque removal, periodontal pocket charting, and fluoride varnish protection.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* High-Impact Promotions Banner */}
-        <div className="rounded-3xl bg-neutral-950 dark:bg-neutral-900 text-white p-8 sm:p-12 shadow-thick border-2 border-neutral-800 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-lime/15 rounded-full blur-3xl pointer-events-none" />
+        {/* High-Impact Promotions Banner with Radiant Smile Imagery */}
+        <div className="rounded-3xl bg-neutral-950 dark:bg-[#121212] text-white p-8 sm:p-12 shadow-thick border-2 border-neutral-800 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-lime/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow" />
           
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 space-y-4">
+            {/* Left Image Showcase */}
+            <div className="lg:col-span-4 rounded-2xl overflow-hidden border-2 border-neutral-700 shadow-xl relative h-64 sm:h-72 group">
+              <img
+                src="/images/giuliamar-smile-191626_1920.jpg"
+                alt="Radiant White Smile at Sparkle Dental"
+                className="w-full h-full object-cover img-zoom"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 right-3 text-center">
+                <span className="text-xs font-black text-lime uppercase tracking-wider bg-black/70 px-3 py-1 rounded-full backdrop-blur-xs">
+                  ✨ Take-Home Bleaching Promo
+                </span>
+              </div>
+            </div>
+
+            {/* Middle Content */}
+            <div className="lg:col-span-5 space-y-4">
               <span className="px-3.5 py-1.5 rounded-full bg-lime text-neutral-950 font-black text-xs uppercase tracking-wider">
                 Special Patient Promotions
               </span>
-              <h3 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">
                 New Patient Exam & Professional Bleaching Special
               </h3>
               <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
@@ -67,7 +119,7 @@ export default function AmenitiesSection({ onOpenWizard }) {
               </p>
               <div className="flex flex-wrap gap-4 pt-2 text-xs font-bold text-neutral-300">
                 <span className="flex items-center space-x-1.5">
-                  <span className="w-2 h-2 rounded-full bg-lime" />
+                  <span className="w-2 h-2 rounded-full bg-lime animate-ping" />
                   <span>CareCredit 0% APR Options</span>
                 </span>
                 <span className="flex items-center space-x-1.5">
@@ -77,18 +129,19 @@ export default function AmenitiesSection({ onOpenWizard }) {
               </div>
             </div>
 
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+            {/* Right Buttons */}
+            <div className="lg:col-span-3 flex flex-col gap-3 justify-center">
               <button
                 onClick={() => onOpenWizard('New Patient Exam')}
-                className="w-full py-4 rounded-full bg-lime hover:bg-lime-hover text-neutral-950 font-black text-base transition-all shadow-glow-lime active:scale-95 text-center"
+                className="w-full py-4 rounded-full bg-lime hover:bg-lime-hover text-neutral-950 font-black text-sm uppercase tracking-wider transition-all shadow-glow-lime active:scale-95 text-center"
               >
                 Claim Promotion & Book
               </button>
               <a
                 href={`tel:${BUSINESS_INFO.phone.replace(/[^0-9]/g, '')}`}
-                className="w-full py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 text-white font-bold text-center text-sm transition"
+                className="w-full py-3.5 rounded-full border border-neutral-700 hover:border-neutral-500 text-white font-bold text-center text-xs uppercase tracking-wider transition"
               >
-                Questions? Call {BUSINESS_INFO.phone}
+                Call (610) 683-6955
               </a>
             </div>
           </div>

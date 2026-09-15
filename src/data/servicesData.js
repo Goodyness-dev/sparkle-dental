@@ -6,6 +6,7 @@
     subType: 'Crowns',
     description: 'Precision-milled, lifelike porcelain and zirconia crowns designed to restore damaged, cracked, or severely decayed teeth to full strength and beauty.',
     icon: 'Shield',
+    image: '/images/anestiev-tooth-2068131_1920.jpg',
     popular: true,
   },
   {
@@ -15,6 +16,7 @@
     subType: 'Endodontics',
     description: 'Anxiety-free, gentle endodontic treatment that relieves acute nerve pain, clears infection, and saves your natural tooth from extraction.',
     icon: 'Activity',
+    image: '/images/jarmoluk-dentist-428646_1920.jpg',
     popular: true,
   },
   {
@@ -24,6 +26,7 @@
     subType: 'Implants',
     description: 'The gold standard in tooth replacement. Lifelike titanium anchors and custom ceramic crowns that look, feel, and function exactly like natural teeth.',
     icon: 'Anchor',
+    image: '/images/kumarsu6745-dental-10184702_1920.jpg',
     popular: true,
   },
   {
@@ -33,6 +36,7 @@
     subType: 'Bridges',
     description: 'Seamlessly replace one or multiple missing teeth with custom fixed bridges anchored to neighboring teeth or implants for seamless chewing and confidence.',
     icon: 'Layers',
+    image: '/images/diegotoralabad-dentist-7397734_1920.jpg',
     popular: false,
   },
   {
@@ -42,6 +46,7 @@
     subType: 'Dentures',
     description: 'Comfort-engineered, natural-looking complete and partial dentures customized for snug fit, effortless speech, and balanced chewing.',
     icon: 'Smile',
+    image: '/images/diegotoralabad-dentist-7397735_1920.jpg',
     popular: false,
   },
   {
@@ -51,6 +56,7 @@
     subType: 'Pediatric Care',
     description: 'Gentle, patient, and fun dental care for children of all ages. Includes gentle cleanings, fluoride treatments, sealants, and positive habit coaching.',
     icon: 'Heart',
+    image: '/images/meistervideo-dentist-1933009_1920.jpg',
     popular: true,
   },
   {
@@ -60,6 +66,7 @@
     subType: 'Hygiene & Cleanings',
     description: 'Thorough ultrasonic scale and polish, periodontal gum health evaluations, low-radiation digital x-rays, and comprehensive oral cancer screenings.',
     icon: 'Sparkles',
+    image: '/images/rgerber-teeth-cleaning-1514692_1920.jpg',
     popular: true,
   },
   {
@@ -69,6 +76,7 @@
     subType: 'Restorative Fillings',
     description: 'Mercury-free, tooth-colored composite resin restorations that blend invisibly with your natural tooth enamel while halting decay.',
     icon: 'CheckCircle',
+    image: '/images/kumarsu6745-caries-10184704_1920.jpg',
     popular: true,
   },
   {
@@ -78,6 +86,7 @@
     subType: 'Extractions',
     description: 'Comfort-first tooth removal for non-restorable teeth, crowded dentition, or problematic wisdom teeth with gentle numbing protocols.',
     icon: 'Wrench',
+    image: '/images/mufidpwt-dentist-6623010_1920.jpg',
     popular: false,
   },
   {
@@ -87,6 +96,7 @@
     subType: 'Cosmetic',
     description: 'Enhance the symmetry, contour, and brightness of your smile through customized aesthetic bonding, enamel contouring, and complete smile designs.',
     icon: 'Star',
+    image: '/images/giuliamar-smile-191626_1920.jpg',
     popular: true,
   },
   {
@@ -96,6 +106,7 @@
     subType: 'Whitening',
     description: 'Clinical-strength, prescription take-home whitening trays that safely lift coffee, tea, and age-related discoloration without painful sensitivity.',
     icon: 'Sun',
+    image: '/images/4961598-teeth-3433751_1920.jpg',
     popular: true,
   },
   {
@@ -105,6 +116,7 @@
     subType: 'Emergency Care',
     description: 'Immediate compassionate triage for severe toothaches, broken teeth, lost restorations, or facial swelling. Same-day appointments available.',
     icon: 'AlertCircle',
+    image: '/images/dentistofficial-dentist-6058791_1920.jpg',
     popular: true,
   },
 ];

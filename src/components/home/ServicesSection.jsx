@@ -12,7 +12,7 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
     <section id="services" className="py-20 sm:py-28 bg-[#fbfbfb] dark:bg-[#0a0a0a] transition-colors" aria-labelledby="services-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Tactile Minimalist) */}
+        {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs font-bold text-neutral-600 dark:text-neutral-400 uppercase tracking-widest mb-3">
             <span>Comprehensive Dental Care</span>
@@ -42,37 +42,52 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
           ))}
         </div>
 
-        {/* Tactile Thick Cards Grid (Thick & Alive Design System) */}
+        {/* Tactile Thick Cards Grid with Rich Photography & Hover Zoom */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {filteredServices.map((service) => (
             <article
               key={service.id}
               onClick={() => onOpenWizard(service.category, service.subType)}
-              className="card-thick-hover p-8 sm:p-9 rounded-3xl cursor-pointer group flex flex-col justify-between"
+              className="card-thick-hover p-6 sm:p-7 rounded-3xl cursor-pointer group flex flex-col justify-between overflow-hidden"
             >
               <div>
-                {/* Header row with badge & icon */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-neutral-900 dark:text-lime group-hover:scale-110 transition-transform">
-                    {/* Semantic Tooth Outline SVG */}
-                    <svg className="w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C7.5 2 4 5 4 9c0 3.2 1.6 5.8 3 8.5C8.2 20 9.1 22 10.5 22c1.2 0 1.5-1.5 1.5-3 0-1.5.5-2 1.5-2s1.5.5 1.5 2c0 1.5.3 3 1.5 3 1.4 0 2.3-2 3.5-4.5 1.4-2.7 3-5.3 3-8.5 0-4-3.5-7-8-7z" />
-                    </svg>
-                  </div>
-                  {service.popular && (
-                    <span className="px-3 py-1 rounded-full bg-lime/30 dark:bg-lime/20 text-neutral-900 dark:text-lime border border-lime/40 text-xs font-black uppercase tracking-wider">
-                      Popular
+                {/* Visual Image Header */}
+                <div className="relative h-48 sm:h-52 w-full rounded-2xl overflow-hidden mb-5 bg-neutral-100 dark:bg-neutral-800">
+                  <img
+                    src={service.image}
+                    alt={`${service.title} - Sparkle Dental Kutztown`}
+                    loading="lazy"
+                    className="w-full h-full object-cover img-zoom"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  
+                  {/* Frosted Badge Pill on Image */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-wider border border-white/20">
+                      {service.category}
                     </span>
-                  )}
+                    {service.popular && (
+                      <span className="px-2.5 py-1 rounded-full bg-lime text-neutral-950 text-[11px] font-black uppercase tracking-wider shadow-glow-lime">
+                        Featured
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <span className="text-white text-xs font-semibold drop-shadow-sm flex items-center space-x-1.5">
+                      <span className="w-2 h-2 rounded-full bg-lime" />
+                      <span>{service.subType}</span>
+                    </span>
+                  </div>
                 </div>
 
                 {/* Procedure Title */}
-                <h3 className="text-xl sm:text-2xl font-black text-neutral-950 dark:text-white tracking-tight leading-snug mb-3 group-hover:text-lime-dark dark:group-hover:text-lime transition-colors">
+                <h3 className="text-xl sm:text-2xl font-black text-neutral-950 dark:text-white tracking-tight leading-snug mb-2.5 group-hover:text-lime-dark dark:group-hover:text-lime transition-colors">
                   {service.title}
                 </h3>
 
                 {/* Clinical description */}
-                <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base leading-relaxed mb-6 font-medium">
+                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-4 font-medium line-clamp-3">
                   {service.description}
                 </p>
               </div>
@@ -80,7 +95,7 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
               {/* Action row */}
               <div className="pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between text-xs font-bold uppercase tracking-wider">
                 <span className="text-neutral-400 dark:text-neutral-500">
-                  {service.category}
+                  Anxiety-Free Protocol
                 </span>
                 <div className="inline-flex items-center space-x-1.5 text-neutral-900 dark:text-lime font-black group-hover:translate-x-1 transition-transform">
                   <span>Schedule</span>
@@ -97,7 +112,7 @@ export default function ServicesSection({ onOpenWizard, onViewAllServices }) {
         <div className="text-center">
           <button
             onClick={onViewAllServices}
-            className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-neutral-900 hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-700 text-white font-bold text-base transition-all shadow-thick active:scale-95 border border-neutral-800"
+            className="inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-neutral-950 hover:bg-black dark:bg-neutral-800 dark:hover:bg-neutral-700 text-white font-bold text-base transition-all shadow-thick active:scale-95 border border-neutral-800 hover:shadow-glow-lime"
           >
             <span>Explore Full Dental Catalog ({SERVICES.length} Procedures)</span>
             <svg className="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2.5">

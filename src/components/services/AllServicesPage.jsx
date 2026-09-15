@@ -84,31 +84,50 @@ export default function AllServicesPage({ onOpenWizard, onBackToHome }) {
           </div>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Grid with Visual Image Headers */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredServices.map(service => (
             <article
               key={service.id}
               onClick={() => onOpenWizard(service.category, service.subType)}
-              className="card-thick-hover p-8 rounded-3xl cursor-pointer group flex flex-col justify-between"
+              className="card-thick-hover p-6 sm:p-7 rounded-3xl cursor-pointer group flex flex-col justify-between overflow-hidden"
             >
               <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-900 flex items-center justify-center text-neutral-950 dark:text-lime">
-                    <svg className="w-5 h-5 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C7.5 2 4 5 4 9c0 3.2 1.6 5.8 3 8.5C8.2 20 9.1 22 10.5 22c1.2 0 1.5-1.5 1.5-3 0-1.5.5-2 1.5-2s1.5.5 1.5 2c0 1.5.3 3 1.5 3 1.4 0 2.3-2 3.5-4.5 1.4-2.7 3-5.3 3-8.5 0-4-3.5-7-8-7z" />
-                    </svg>
+                {/* Visual Image Header */}
+                <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-5 bg-neutral-100 dark:bg-neutral-800">
+                  <img
+                    src={service.image}
+                    alt={`${service.title} - Sparkle Dental Kutztown`}
+                    loading="lazy"
+                    className="w-full h-full object-cover img-zoom"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  
+                  {/* Category Pill Tag Overlay */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-wider border border-white/20">
+                      {service.category}
+                    </span>
+                    {service.popular && (
+                      <span className="px-2.5 py-1 rounded-full bg-lime text-neutral-950 text-[11px] font-black uppercase tracking-wider shadow-glow-lime">
+                        Featured
+                      </span>
+                    )}
                   </div>
-                  <span className="text-xs font-bold text-neutral-500 uppercase">
-                    {service.category}
-                  </span>
+
+                  <div className="absolute bottom-3 left-3">
+                    <span className="text-white text-xs font-semibold drop-shadow-sm flex items-center space-x-1.5">
+                      <span className="w-2 h-2 rounded-full bg-lime" />
+                      <span>{service.subType}</span>
+                    </span>
+                  </div>
                 </div>
 
-                <h2 className="text-xl font-black text-neutral-950 dark:text-white tracking-tight leading-snug mb-3 group-hover:text-lime-dark dark:group-hover:text-lime transition-colors">
+                <h2 className="text-xl font-black text-neutral-950 dark:text-white tracking-tight leading-snug mb-2 group-hover:text-lime-dark dark:group-hover:text-lime transition-colors">
                   {service.title}
                 </h2>
 
-                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-6 font-medium">
+                <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-6 font-medium line-clamp-3">
                   {service.description}
                 </p>
               </div>

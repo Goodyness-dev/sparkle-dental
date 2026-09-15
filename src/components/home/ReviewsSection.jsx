@@ -2,12 +2,19 @@
 import { BUSINESS_INFO } from '../../data/businessData';
 
 export default function ReviewsSection({ onOpenWizard }) {
+  const smileGallery = [
+    { img: '/images/4961598-teeth-3433751_1920.jpg', caption: 'Teeth Whitening Special', sub: 'Brightening results' },
+    { img: '/images/giuliamar-smile-191626_1920.jpg', caption: 'Full Smile Transformation', sub: 'Cosmetic restorative' },
+    { img: '/images/meistervideo-dentist-1933009_1920.jpg', caption: 'Pediatric First Visit', sub: 'Tear-free checkups' },
+    { img: '/images/anestiev-tooth-2068131_1920.jpg', caption: 'Aesthetic Crown Finish', sub: 'Natural ceramic match' },
+  ];
+
   return (
     <section id="reviews" className="py-20 sm:py-28 bg-[#fbfbfb] dark:bg-[#0a0a0a] transition-colors" aria-labelledby="reviews-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs font-bold text-neutral-600 dark:text-neutral-400 uppercase tracking-widest mb-3">
             <span>Patient Experiences</span>
           </div>
@@ -26,6 +33,29 @@ export default function ReviewsSection({ onOpenWizard }) {
               5.0 Star Local Patient Reputation
             </span>
           </div>
+        </div>
+
+        {/* Smile Transformation Proof Rail */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14">
+          {smileGallery.map((item, idx) => (
+            <div 
+              key={idx} 
+              className="card-thick-hover rounded-2xl overflow-hidden group relative"
+            >
+              <div className="h-44 sm:h-52 w-full overflow-hidden bg-neutral-200 dark:bg-neutral-800">
+                <img
+                  src={item.img}
+                  alt={item.caption}
+                  loading="lazy"
+                  className="w-full h-full object-cover img-zoom"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-3.5 text-white">
+                <p className="text-xs font-black drop-shadow-sm">{item.caption}</p>
+                <p className="text-[10px] text-lime font-semibold drop-shadow-sm">{item.sub}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Reviews Bento Grid */}
@@ -72,7 +102,7 @@ export default function ReviewsSection({ onOpenWizard }) {
         <div className="mt-14 sm:mt-16 text-center">
           <button
             onClick={() => onOpenWizard()}
-            className="inline-flex items-center space-x-3 px-9 py-4 rounded-full bg-neutral-950 hover:bg-black dark:bg-lime dark:hover:bg-lime-hover text-white dark:text-neutral-950 font-black text-base transition-all shadow-thick active:scale-95"
+            className="inline-flex items-center space-x-3 px-9 py-4 rounded-full bg-neutral-950 hover:bg-black dark:bg-lime dark:hover:bg-lime-hover text-white dark:text-neutral-950 font-black text-base transition-all shadow-thick active:scale-95 hover:shadow-glow-lime"
           >
             <span>Experience Gentle Dentistry — Book Today</span>
             <svg className="w-4 h-4 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth="2.5">
